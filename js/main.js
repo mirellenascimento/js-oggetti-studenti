@@ -7,12 +7,12 @@ var student = {
   'nome': 'John',
   'cognome': 'Lennon',
   'età': 40
-}
+};
 
 for (key in student) {
   $('#stamp01').append(key, ' : ', student[key], '<br>');
-  console.log(key, ' : ', student[key]);
-}
+};
+console.log(key, ' : ', student[key]);
 
 // PART 02
 var students = [
@@ -36,11 +36,12 @@ var students = [
     'cognome': 'Starr',
     'età': 80
   }
-]
+];
+console.log(students);
 
 $('#allStudents').one('click', function(){
   $('#stamp01').remove();
-  stamp(students, student, '#stamp02');
+  studentList(students, student, '#stamp02');
 });
 
 
@@ -49,7 +50,7 @@ var newStudent = {
   'nome': undefined,
   'cognome': undefined,
   'età': undefined
-}
+};
 
 $('#newStudentBtn').click(function(){
   newStudent.nome = prompt('Nome:');
@@ -58,5 +59,6 @@ $('#newStudentBtn').click(function(){
 
   students.push(newStudent);
   newStudentList(newStudent, '#stamp02')
+
   console.log(students);
-})
+});
