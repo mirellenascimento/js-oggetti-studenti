@@ -41,7 +41,14 @@ console.log(students);
 
 $('#allStudents').one('click', function(){
   $('#stamp01').remove();
-  studentList(students, student, '#stamp02');
+  for (var i = 0; i < students.length; i++) {
+    for (key in student){
+      $('#stamp02').append(key, ' : ', students[i][key], '<br>')
+      if (key === 'età'){
+        $('#stamp02').append('<br>');
+      }
+    }
+  }
 });
 
 
@@ -58,7 +65,12 @@ $('#newStudentBtn').click(function(){
   newStudent.età = parseInt(prompt('età'));
 
   students.push(newStudent);
-  newStudentList(newStudent, '#stamp02')
+  for (key in newStudent) {
+    $('#stamp02').append(key, ' : ', newStudent[key], '<br>');
+    if (key === 'età'){
+      $('#stamp02').append('<br>');
+    }
+  };
 
   console.log(students);
 });
