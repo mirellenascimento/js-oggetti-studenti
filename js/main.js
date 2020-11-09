@@ -2,7 +2,7 @@
 Creare un array di oggetti di studenti. Ciclare su tutti gli studenti e stampare per ognuno nome e cognome
 Dare la possibilità all’utente attraverso 3 prompt di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.*/
 
-// PART 01
+// stamp 01
 var student = {
   'nome': 'John',
   'cognome': 'Lennon',
@@ -10,7 +10,7 @@ var student = {
 }
 
 for (key in student) {
-  $('#part01').append(key, ' : ', student[key], '<br>');
+  $('#stamp01').append(key, ' : ', student[key], '<br>');
   console.log(key, ' : ', student[key]);
 }
 
@@ -39,8 +39,8 @@ var students = [
 ]
 
 $('#allStudents').one('click', function(){
-  $('#part01').remove();
-  stamp(students, student, '#part02');
+  $('#stamp01').remove();
+  stamp(students, student, '#stamp02');
 });
 
 
@@ -57,12 +57,6 @@ $('#newStudentBtn').click(function(){
   newStudent.età = parseInt(prompt('età'));
 
   students.push(newStudent);
-  for (key in newStudent) {
-    $('#part02').append(key, ' : ', newStudent[key], '<br>');
-    console.log(key, ' : ', student[key]);
-    if (key === 'età'){
-      $(id).append('<br>');
-    }
-  }
+  newStudentList(newStudent, '#stamp02')
   console.log(students);
 })
